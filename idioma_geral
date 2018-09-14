@@ -7,7 +7,7 @@ txt[$n]="$line"
 n=$(($n+1))
 done < $_dr
 unset n
-[[ ${txt[0]} ="" ]] && rm $_dr && exit 1
+[[ ${txt[0]} = "" ]] && rm $_dr && exit 1
 else
 txt[0]="ADM-MANAGER-ULTIMATE RS"
 txt[1]="ONLINE:"
@@ -20,7 +20,7 @@ txt[7]="ATUALIZAÇÃO"
 txt[8]="REMOVER ADM-ULTIMATE RS"
 txt[9]="OPÇÃO:"
 txt[10]="[ON]"
-txt[11]="[DESATIVADO]"
+txt[11]="[DESACTIVADO]"
 txt[12]="MUDAR CORES DO SCRIPT"
 txt[13]="[BACK / EXIT]"
 txt[14]="MENU DE USUÁRIOS"
@@ -192,7 +192,7 @@ txt[179]="Procedimento de sucesso"
 txt[180]="ACESSO AO ARQUIVO ATRAVÉS DO LINK"
 txt[181]="Seus arquivos na pasta"
 txt[182]="TESTE SUA VELOCIDADE"
-txt[183] ​​="INFORMAÇÃO VPS"
+txt[183] ​​= "INFORMAÇÃO VPS"
 txt[184]="Início dos testes, aguarde ..."
 txt[185]="Tempo de resposta do ping"
 txt[186]="Velocidade de upload"
