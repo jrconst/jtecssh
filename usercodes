@@ -481,7 +481,7 @@ echo "</h6></font>" >> $local
 }
 
 function_7 () {
-echo -e "${cor[3]} "¿Realmente desea añadir un banner?""
+echo -e "${cor[3]} "Realmente deseja adicionar um banner?""
 read -p " [S/N]: " -e -i n sshsn
 [[ "$sshsn" = @(s|S|y|Y) ]] && {
 local2="/etc/dropbear/banner"
