@@ -93,8 +93,8 @@ txt[80]=""
 txt[81]="Traduzindo o sistema ..."
 txt[82]="Digite um idioma:"
 txt[83]="horas"
-txt[84]="agir"
-txt[85]="usar"
+txt[84]="minutos"
+txt[85]="user"
 txt[86]="Nenhum usuário online"
 txt[87]="APAGAR USUÁRIOS FALECIDOS"
 txt[88]="Nenhum usuário expirado!"
@@ -348,6 +348,7 @@ txt[335]="MENU DE INSTALAÇÃO"
 txt[336]="INSTALAR"
 txt[337]="CONFIGURAR"
 txt[338]="Selecione uma opção"
+txt[339]="REINICIAR SERVIÇOS"
 echo "${txt[0]}" > $_dr
 for((_cont=1; _cont<${#txt[@]}; _cont++)); do
 echo "${txt[$_cont]}" >> $_dr
