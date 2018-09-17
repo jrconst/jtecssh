@@ -44,8 +44,8 @@ done
   [[ -e /etc/adm-lite/idioma ]] && rm /etc/adm-lite/idioma  
 wget -O versao_script https://raw.githubusercontent.com/jrconst/versaoatt/master/versaoatt -q -O /etc/adm-lite/versao_script
 echo -e "${cor[1]} =================================== ${cor[0]}"
-echo -ne "${cor[5]}"
-read -p " ${txt[47]}"
+echo -ne "${cor[2]}"
+read -p " ${txt[208]}"
 source menu
 exit
 }
@@ -59,7 +59,7 @@ cor[0]="\033[1;37m"
 
 #TEXTOS
 txt[206]="Arquivos Atuaizados!"
-#txt[208]="Chave inválida, contate o ADM do Script!"
+txt[208]="Enter para voltar ao MENU"
 #txt[207]="Válidalida!!!"
 txt[203]="Analizando"
 txt[204]="Arquivo"

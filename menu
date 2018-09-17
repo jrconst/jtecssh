@@ -19,6 +19,7 @@ source ferramentas
 exit
 ;;
 3)
+clear
 fun_atualizar
 exit
 ;;
