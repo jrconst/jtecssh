@@ -115,114 +115,13 @@ echo -e "$barra"
 fun_bar "apt-get install squid3 -y"
 echo -e "$barra"
 echo -e " $(source trans -b pt:${id} "INICIANDO CONFIGURACAO")"
-echo -e "" > /etc/payloads
-#Añadir Host Squid
-payload="/etc/payloads"
-echo -e "" > /etc/payloads
-echo -e " ${txt[219]}"
-echo -e " ${txt[220]}" 
-read -p " $(source trans -b pt:${id} "Agregar Host"): " hos
-if [[ $hos != \.* ]]; then
-echo -e "\033[1;31m $(source trans -b pt:${id} " [!] Host-Squid debe iniciar con "."")\033[0m"
-echo -e "\033[1;31m $(source trans -b pt:${id} " Asegurese de agregarlo despues corretamente!")\033[0m"
-fi
-host="$hos/"
-if [[ -z $host ]]; then
-echo -e "\033[1;31m $(source trans -b pt:${id} " [!] Host-Squid no agregado")"
-echo -e "\033[1;31m $(source trans -b pt:${id} " Asegurese de agregarlo despues!")\033[0m"
-fi
-echo "$host" >> $payload && grep -v "^$" $payload > /tmp/a && mv /tmp/a $payload
-echo -e "$barra\n\033[1;32m $(source trans -b pt:${id} "Agora Escolha Uma Conf Para Seu Proxy")\n$barra"
-echo -e " |1| $(source trans -b pt:${id} "Comum")"
-echo -e " |2| $(source trans -b pt:${id} "Customizado") -\033[1;31m $(source trans -b pt:${id} "Usuario Deve Ajustar")\033[1;37m\n$barra"
-read -p " [1/2]: " -e -i 1 proxy_opt
 unset var_squid
 if [[ -d /etc/squid ]]; then
 var_squid="/etc/squid/squid.conf"
 elif [[ -d /etc/squid3 ]]; then
 var_squid="/etc/squid3/squid.conf"
 fi
-if [[ "$proxy_opt" = @(02|2) ]]; then
-echo -e "#ConfiguracaoSquiD
-acl url1 dstdomain -i $ip
-acl url2 dstdomain -i 127.0.0.1
-acl url3 url_regex -i '/etc/payloads'
-acl url4 dstdomain -i localhost
-acl accept dstdomain -i GET
-acl accept dstdomain -i POST
-acl accept dstdomain -i OPTIONS
-acl accept dstdomain -i CONNECT
-acl accept dstdomain -i PUT
-acl HEAD dstdomain -i HEAD
-acl accept dstdomain -i TRACE
-acl accept dstdomain -i OPTIONS
-acl accept dstdomain -i PATCH
-acl accept dstdomain -i PROPATCH
-acl accept dstdomain -i DELETE
-acl accept dstdomain -i REQUEST
-acl accept dstdomain -i METHOD
-acl accept dstdomain -i NETDATA
-acl accept dstdomain -i MOVE
-acl all src 0.0.0.0/0
-http_access allow url1
-http_access allow url2
-http_access allow url3
-http_access allow url4
-http_access allow accept
-http_access allow HEAD
-http_access deny all
 
-# Request Headers Forcing
-
-request_header_access Allow allow all
-request_header_access Authorization allow all
-request_header_access WWW-Authenticate allow all
-request_header_access Proxy-Authorization allow all
-request_header_access Proxy-Authenticate allow all
-request_header_access Cache-Control allow all
-request_header_access Content-Encoding allow all
-request_header_access Content-Length allow all
-request_header_access Content-Type allow all
-request_header_access Date allow all
-request_header_access Expires allow all
-request_header_access Host allow all
-request_header_access If-Modified-Since allow all
-request_header_access Last-Modified allow all
-request_header_access Location allow all
-request_header_access Pragma allow all
-request_header_access Accept allow all
-request_header_access Accept-Charset allow all
-request_header_access Accept-Encoding allow all
-request_header_access Accept-Language allow all
-request_header_access Content-Language allow all
-request_header_access Mime-Version allow all
-request_header_access Retry-After allow all
-request_header_access Title allow all
-request_header_access Connection allow all
-request_header_access Proxy-Connection allow all
-request_header_access User-Agent allow all
-request_header_access Cookie allow all
-request_header_access All deny all
-
-# Response Headers Spoofing
-
-reply_header_access Via deny all
-reply_header_access X-Cache deny all
-reply_header_access X-Cache-Lookup deny all
-
-
-#portas" > $var_squid
-for pts in $(echo -e $PORT); do
-echo -e "http_port $pts" >> $var_squid
-done
-echo -e "
-#nome
-visible_hostname ADM-MANAGER
-
-via off
-forwarded_for off
-pipeline_prefetch off" >> $var_squid
- else
 echo -e "#ConfiguracaoSquiD
 acl url1 dstdomain -i $ip
 acl url2 dstdomain -i 127.0.0.1
@@ -241,12 +140,12 @@ echo -e "http_port $pts" >> $var_squid
 done
 echo -e "
 #nome
-visible_hostname ADM-MANAGER
+visible_hostname JTEC-NETFINE
 
 via off
 forwarded_for off
 pipeline_prefetch off" >> $var_squid
-fi
+
 fun_eth
 echo -e "$barra\n \033[1;31m [ ! ] \033[1;33m$(source trans -b pt:${id} "REINICIANDO SERVICOS")"
 squid3 -k reconfigure > /dev/null 2>&1
