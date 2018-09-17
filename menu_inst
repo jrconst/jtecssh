@@ -122,6 +122,33 @@ elif [[ -d /etc/squid3 ]]; then
 var_squid="/etc/squid3/squid.conf"
 fi
 
+echo "minhaclaro.claro.com.br
+recargafacil.claro.com.br
+frontend.claro.com.br
+appfb.claro.com.sv
+empresas.claro.com.br
+d1n212ccp6ldpw.cloudfront.net
+claro-gestoronline.claro.com.br
+forms.claro.com.br
+golpf.claro.com.br
+logtiscap.claro.com.br
+www.recargafacil.claro.com.br
+global-4-lvs-colossus-5.opera-mini.net.prancis.nut.cc/
+ecob.claro.com.br
+.vivo.com.br
+.bradescocelular.com.br
+.claroseguridad.com
+portalrecarga.vivo.com.br/recarga/home
+portalrecarga.vivo.com.br/recarga
+portalrecarga.vivo.com.br/controle
+navegue.vivo.com.br/pre
+navegue.vivo.com.br/controle
+meuvivo.vivo.com.br/mobile/appmanager/env/movel
+www.portalsva2.vivo.com.br/captive-static/tarif-def/pd/index.html
+portalrecarga.vivo.com.br/vivoprepago/
+portalrecarga.vivo.com.br/noCredit/vitrine/controle
+d1n212ccp6ldpw.cloudfront.net" > /etc/payloads
+
 echo -e "#ConfiguracaoSquiD
 acl url1 dstdomain -i $ip
 acl url2 dstdomain -i 127.0.0.1
