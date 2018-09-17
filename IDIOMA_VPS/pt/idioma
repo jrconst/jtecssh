@@ -1,4 +1,4 @@
-ADM-MANAGER-ULTIMATE
+JTEC-NETFINE SCRIPT
 EM LINHA:
 EXPIRADO:
 SEU SISTEMA:
@@ -6,7 +6,7 @@ BEM-VINDO AO MENU!
 GERENCIAR USUÁRIOS
 FERRAMENTAS
 UPDATE
-REMOVER ADM-ULTIMATE
+REMOVER JTEC-NETFINE
 OPÇÃO:
 [ON]
 [DISABLED]
@@ -25,7 +25,7 @@ Qual é a sequência de cores ?:
 Seis cores não foram selecionadas!
 Aplicando a cor selecionada! ...
 MUDAR IDIOMA DO SCRIPT
-CRIADOR DE USUÁRIO ADM-ULTIMATE
+CRIADOR DE USUÁRIO JTEC-NETFINE
 Nome do novo usuário:
 Nome nulo
 Usuário já existente!
@@ -76,7 +76,7 @@ USUÁRIOS
 CONEXÃO
 TIME
 Essa ferramenta vai traduzir
-Todo o conteúdo do ADM-ULTIMATE
+Todo o conteúdo do JTEC-NETFINE
 Selecione o número do idioma ou use as iniciais do idioma.
 
 Traduzindo o sistema ...
@@ -99,7 +99,7 @@ COMPARTILHE DO ARQUIVO ONLINE
 Digite apenas valores numéricos
 INICIANDO BACKUP
 Backup do usuário
-Usuário não registrado no ADM-ULTIMATE
+Usuário não registrado no JTEC-NETFINE
 Digite as informações do usuário.
 Senha atual:
 Dias de duração:
@@ -314,7 +314,7 @@ VNC não está ativo Deseja ativar?
 VNC está ativo Deseja desabilitar?
 SERVIDOR VNC
 SUA VERSÃO É ATUALIZADA!
-ADM-ULTIMATE PRECISA DE ATUALIZAÇÃO!
+JTEC-NETFINE PRECISA DE ATUALIZAÇÃO!
 APLICAR BLOCO TORRENTE
 Crie um novo arquivo OpenVPN?
 Criar arquivo com autenticação (nome de usuário e senha)?
