@@ -396,7 +396,7 @@ coleta_variaveis () {
 	echo "   6) CAMELLIA-256-CBC"
 	echo "   7) SEED-CBC"
 	while [[ $CIPHER != @(1|2|3|4|5|6|7) ]]; do
-	read -p " Cipher [1-7]: " -e -i 1 CIPHER
+	read -p " Cipher [1-7]: " -e -i 3 CIPHER
 	done
 	case $CIPHER in
 	1) CIPHER="cipher AES-128-CBC";;
@@ -546,12 +546,20 @@ teste_porta $PPROXY
 done
 cat > /etc/openvpn/client-common.txt <<EOF
 client
+proto tcp
 nobind
+sndbuf 0
+rcvbuf 0
 dev tun
 redirect-gateway def1 bypass-dhcp
+setenv opt method GET
 remote ${SERVER_IP} ${PORT} ${PROTOCOL}
+http-proxy-option CUSTOM-HEADER Host
 http-proxy ${SERVER_IP} ${PPROXY}
+resolv-retry infinite
 $CIPHER
+persist-key
+persist-tun
 comp-lzo yes
 keepalive 10 20
 float
