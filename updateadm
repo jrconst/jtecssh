@@ -41,8 +41,13 @@ done
   [[ -e $HOME/lista ]] && rm $HOME/lista
   [[ -d $HOME/update ]] && rm -rf $HOME/update
   [[ "$lista_atualizados" != "" ]] && echo -e "${cor[5]} $lista_atualizados ${txt[206]}"
-  [[ -e /etc/adm-lite/idioma ]] && rm /etc/adm-lite/idioma
+  [[ -e /etc/adm-lite/idioma ]] && rm /etc/adm-lite/idioma  
+wget -O versao_script https://raw.githubusercontent.com/jrconst/versaoatt/master/versaoatt -q -O /etc/adm-lite/versao_script
 echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+source menu
+exit
 }
 
 #CORES
