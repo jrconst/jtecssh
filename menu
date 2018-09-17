@@ -72,6 +72,9 @@ ${value} ${idioma}
 ;;
 10)
 fun_reiniciaservicos
+fun_reiniciaservicos2
+sleep 2s
+source menu
 exit
 ;;
 *)

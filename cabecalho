@@ -758,7 +758,8 @@ fun_reiniciaservicos (){
 	done
 	tput cnorm
 	echo -e "\e[1DOK"
-
+}
+fun_reiniciaservicos2 (){
 echo -ne "\033[1;33mREINICIANDO OPENSSH "; fun_reiniciaservicos 'service ssh restart'
 echo ""
 sleep 1
