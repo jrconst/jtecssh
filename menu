@@ -70,10 +70,7 @@ value=$(vary_rex "2f6574632f61646d2d6c6974652f6d656e755f696e7374")
 ${value} ${idioma}
 ;;
 10)
-source reiniciaservicos
-echo -ne "${cor[5]}"
-read -p " ${txt[47]}"
-source menu
+fun_reiniciaservicos
 exit
 ;;
 *)
